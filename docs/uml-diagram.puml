@@ -1,0 +1,54 @@
+@startuml BankSystem
+
+class Bank {
+  - _name: String
+  - _accounts: List<Account>
+  - _next_account_id: int
+  --
+  + __init__(name: String)
+  + create_account(owner: String, initial_balance: int = 0): Account
+  + find_account(account_id: int): Account
+  + display_all_accounts(): List<String>
+}
+
+class Account {
+  - _account_id: int
+  - _owner: String
+  - _balance: int
+  --
+  + __init__(account_id: int, owner: String, balance: int = 0)
+  + get_balance(): int
+  + deposit(amount: int): boolean
+  + withdraw(amount: int): boolean
+  + __str__(): String
+}
+
+class Transaction {
+  - transaction_id: int
+  - account_id: int
+  - amount: int
+  - type: String
+  - timestamp: String
+  - description: String
+  --
+  + __init__(transaction_id: int, account_id: int, amount: int, type: String, timestamp: String)
+  + _generate_description(): String
+  + display_info(): String
+  + get_description(): String
+  + __str__(): String
+}
+
+Bank "1" *-- "many" Account : contains
+Account "1" -- "many" Transaction : references
+
+note right of Account::_balance
+  protected from negative
+  values in constructor
+end note
+
+note right of Transaction::__init__
+  validates type parameter
+  must be 'deposit' or 'withdraw'
+end note
+
+@enduml
