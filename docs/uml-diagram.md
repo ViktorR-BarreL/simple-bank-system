@@ -2,7 +2,7 @@
 
 ## Диаграмма классов
 
-![UML Diagram](uml_diagram.png)
+![UML Diagram](RL9BQpCn3BpxLuWz9T_NXVQwK4XxxgszbM0KhvEO-h5O2kbI-j-x3plx83TBcf5cPEs8CVB5MNX5__NU4cidXB98D6JWHm2KuD7f2eZZ4A5IuUAPAdWpn9ylOxWVaVgRPG98KrTWFFU5KW3y1nKriixrJRXw7OU-3t10Yrxf2eus8CCpF6uhIAq7xj7u-iPSJLX1QqEDnLQYjPb1cs.png)
 
 ## Описание классов
 
