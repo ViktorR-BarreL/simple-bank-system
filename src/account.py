@@ -9,3 +9,16 @@ class Account:
     
     def __str__(self):
         return f"Account {self._account_id}: {self._owner}, Balance: ${self._balance}"
+
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+            return True
+        return False
+    
+    def withdraw(self, amount):
+        if 0 < amount <= self._balance:
+            self._balance -= amount
+            return True
+        return False
+
